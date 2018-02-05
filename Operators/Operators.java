@@ -1,0 +1,66 @@
+class Operators {
+    public static void main(String args[]) {
+        // String name = "Zech";
+        // System.out.println(name);
+
+        // String fullName = "Zechariah Rosal";
+        // System.out.println(fullName);
+
+        // String firstName = "Zechariah";
+        // String lastName = "Rosal";
+        // String fullName = firstName + " " + lastName;
+
+        // System.out.println(firstName);
+        // System.out.println("firstName");
+        // System.out.println(lastName);
+        // System.out.println("lastName");
+        // System.out.println(fullName);
+        // System.out.println("fullName");
+
+        //Replace the -1's with values relevant to yourself
+        // int currentYear = 2018;
+        // int yearsUntilGraduation = 0;
+
+        // int myGradYear = currentYear + yearsUntilGraduation;
+        // System.out.println(myGradYear);
+        // System.out.println("myGradYear");   
+
+         //Replace the -1's with values relevant to yourself
+        // int currentAge = 17;
+        // int nextAge = currentAge + 1;
+        // System.out.println(currentAge);
+        // System.out.println(nextAge);
+
+        // int halfCurrentAge = currentAge / 2;
+        // int halfNextAge = nextAge / 2;
+        // System.out.println(halfCurrentAge);
+        // System.out.println(halfNextAge);
+
+        // //"Modulo" is the name of the '%' operator. Can you figure out what the modulo operator is doing?
+        // int moduloCurrentAge = currentAge % 5;
+        // int moduloNextAge = nextAge % 5;
+        // System.out.println(moduloCurrentAge);
+        // System.out.println(moduloNextAge);    
+
+        double bitcoinsOwned = .000001;
+        double bcsCoinsOwned = 2;
+
+        double bitcoinValue = 10000;
+        double bcsCoinValue = 0;
+
+        double bitcoinsWorth = bitcoinsOwned * bitcoinValue;
+        double bcsCoinsWorth = bcsCoinsOwned * bcsCoinValue;
+        System.out.println("My current bitcoins are worth $" + bitcoinsWorth);
+        System.out.println("My current BCSCoins are worth $" + bcsCoinsWorth);
+
+        //Let's assume I can get it so you can redeem 25 BCSCoins for a $5 giftcard.
+        double reward = 5;
+        double amtToRedeem = 25;
+        bcsCoinValue = reward / amtToRedeem; //Reassign bcsCoinValue to the potential
+        System.out.println("One BCSCoin might be worth $" + bcsCoinValue + " later. If so...");
+
+        bcsCoinsWorth = bcsCoinsOwned * bcsCoinValue; //This is the exact same calculation we used earlier, but we updated bcsCoinValue, so let's calculate it again.
+        System.out.println("My current BCSCoins could eventually be worth $" + bcsCoinsWorth);    
+         
+    }
+}
