@@ -3,8 +3,11 @@
 Edits made at home
 
 Steps to git push
+
 	git add -A
+
 	git commit -m "[some message]"
+
 	git push origin master
 
 ---
@@ -26,5 +29,7 @@ PATH: C:\Program Files\Java\jdk1.8.0_161\bin
 ---
 
 Steps to run program
+
 	javac [filename].[extention]
+
 	java [filename]
