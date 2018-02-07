@@ -42,25 +42,45 @@ class Operators {
         // System.out.println(moduloCurrentAge);
         // System.out.println(moduloNextAge);    
 
-        double bitcoinsOwned = .000001;
-        double bcsCoinsOwned = 2;
+        // double bitcoinsOwned = .000001;
+        // double bcsCoinsOwned = 2;
 
-        double bitcoinValue = 10000;
-        double bcsCoinValue = 0;
+        // double bitcoinValue = 10000;
+        // double bcsCoinValue = 0;
 
-        double bitcoinsWorth = bitcoinsOwned * bitcoinValue;
-        double bcsCoinsWorth = bcsCoinsOwned * bcsCoinValue;
-        System.out.println("My current bitcoins are worth $" + bitcoinsWorth);
-        System.out.println("My current BCSCoins are worth $" + bcsCoinsWorth);
+        // double bitcoinsWorth = bitcoinsOwned * bitcoinValue;
+        // double bcsCoinsWorth = bcsCoinsOwned * bcsCoinValue;
+        // System.out.println("My current bitcoins are worth $" + bitcoinsWorth);
+        // System.out.println("My current BCSCoins are worth $" + bcsCoinsWorth);
 
-        //Let's assume I can get it so you can redeem 25 BCSCoins for a $5 giftcard.
-        double reward = 5;
-        double amtToRedeem = 25;
-        bcsCoinValue = reward / amtToRedeem; //Reassign bcsCoinValue to the potential
-        System.out.println("One BCSCoin might be worth $" + bcsCoinValue + " later. If so...");
+        // //Let's assume I can get it so you can redeem 25 BCSCoins for a $5 giftcard.
+        // double reward = 5;
+        // double amtToRedeem = 25;
+        // bcsCoinValue = reward / amtToRedeem; //Reassign bcsCoinValue to the potential
+        // System.out.println("One BCSCoin might be worth $" + bcsCoinValue + " later. If so...");
 
-        bcsCoinsWorth = bcsCoinsOwned * bcsCoinValue; //This is the exact same calculation we used earlier, but we updated bcsCoinValue, so let's calculate it again.
-        System.out.println("My current BCSCoins could eventually be worth $" + bcsCoinsWorth);    
-         
+        // bcsCoinsWorth = bcsCoinsOwned * bcsCoinValue; //This is the exact same calculation we used earlier, but we updated bcsCoinValue, so let's calculate it again.
+        // System.out.println("My current BCSCoins could eventually be worth $" + bcsCoinsWorth);    
+
+        Boolean haveJob = false;
+        Boolean lookingForWork = true;
+        Boolean canProgram = false;
+        int currentSavings = 500;
+
+        //There are some print statements below. Can you guess which ones will print?
+        if(!haveJob) {
+            if(lookingForWork && canProgram) {
+                System.out.println("Your chances as getting a job go up!");
+            }
+            else {
+                System.out.println("You might need to gain more skills before you can get a job.");
+            }
+        }
+        if(currentSavings < 500) {
+            System.out.println("You should be saving more money.");
+        }
+        else {
+            System.out.println("Do you need to save more money, still?");
+        } 
     }
 }
