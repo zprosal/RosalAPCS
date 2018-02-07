@@ -62,25 +62,79 @@ class Operators {
         // bcsCoinsWorth = bcsCoinsOwned * bcsCoinValue; //This is the exact same calculation we used earlier, but we updated bcsCoinValue, so let's calculate it again.
         // System.out.println("My current BCSCoins could eventually be worth $" + bcsCoinsWorth);    
 
-        Boolean haveJob = false;
-        Boolean lookingForWork = true;
-        Boolean canProgram = false;
-        int currentSavings = 500;
+        // Boolean haveJob = false;
+        // Boolean lookingForWork = true;
+        // Boolean canProgram = false;
+        // int currentSavings = 500;
 
-        //There are some print statements below. Can you guess which ones will print?
-        if(!haveJob) {
-            if(lookingForWork && canProgram) {
-                System.out.println("Your chances as getting a job go up!");
-            }
-            else {
-                System.out.println("You might need to gain more skills before you can get a job.");
-            }
-        }
-        if(currentSavings < 500) {
-            System.out.println("You should be saving more money.");
-        }
-        else {
-            System.out.println("Do you need to save more money, still?");
-        } 
+        // //There are some print statements below. Can you guess which ones will print?
+        // if(!haveJob) {
+        //     if(lookingForWork && canProgram) {
+        //         System.out.println("Your chances as getting a job go up!");
+        //     }
+        //     else {
+        //         System.out.println("You might need to gain more skills before you can get a job.");
+        //     }
+        // }
+        // if(currentSavings < 500) {
+        //     System.out.println("You should be saving more money.");
+        // }
+        // else {
+        //     System.out.println("Do you need to save more money, still?");
+        // } 
+
+        // int targetSavingsGoal = 8800;
+        // int savingsPerMonth = 150;
+        // int monthsToReach = targetSavingsGoal / savingsPerMonth;
+        // System.out.println("months to reach");
+        // System.out.println(monthsToReach);
+
+        // String name1 = "Jeremiah";
+        // String name2 = "Emily";
+        // String name3 = "Christian";
+        // String verb1 = "grabs";
+        // String verb2 = "sees";
+        // String verb3 = "is";
+        // String adj1 = "red";
+        // String adj2 = "wooden";
+        // String adj3 = "cold";
+        // String noun1 = "chair";
+        // String noun2 = "apple";
+        // String noun3 = "grass";
+        // String art1 = "a";
+        // String art2 = "the";
+        // String help = "will";
+
+        // String sent1 = name1 + " " + verb1 + " " + art1 + " " + adj1 + " " + noun1 + ".";
+        // String sent2 = name2 + " " + verb2 + " " + art2 + " " + adj2 + " " + noun2 + ".";
+        // String sent3 = name3 + " " + help + " " + verb3 + " " + adj3 + " " + noun3 + ".";
+
+        // System.out.println(sent1);
+        // System.out.println(sent2);
+        // System.out.println(sent3);
+
+        // Boolean hasGirlfriend = false;
+        // Boolean hasMoney = true;
+        // Boolean hasJob = false;
+
+        // if(hasGirlfriend) {
+        //     System.out.println("Success!");
+        // }
+        // else {
+        //     System.out.println("Not my time.");
+        // }
+        // if(hasMoney || hasJob) {
+        //     System.out.println("You can do it!");
+        // }
+        // else {
+        //     System.out.println("Not good.");
+        // }
+
+        double loanAmount = 12000;
+        double interestRate = 0.01;
+        double loanPaybackPeriod = 6;
+        double interestPerMonth = loanAmount / loanPaybackPeriod;
+
+        System.out.println(interestPerMonth);
     }
 }
