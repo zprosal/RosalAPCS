@@ -30,6 +30,6 @@ PATH: C:\Program Files\Java\jdk1.8.0_161\bin
 
 Steps to run program
 
-	javac [filename].[extention]
+	javac [filename].[extension]
 
 	java [filename]
