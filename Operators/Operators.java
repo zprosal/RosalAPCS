@@ -130,11 +130,12 @@ class Operators {
         //     System.out.println("Not good.");
         // }
 
-        // double loanAmount = 12000;
-        // double interestRate = 1.01;
-        // double loanPaybackPeriod = 6;
-        // double interestPerMonth = loanAmount * interestRate / loanPaybackPeriod - loanAmount / loanPaybackPeriod;
-
-        // System.out.println(interestPerMonth);
+        double loanAmount = 12000; //Principle
+        double interestRate = 0.01;
+        double loanPaybackPeriod = 6;
+        double interestPerMonth = loanAmount * interestRate * loanPaybackPeriod;
+        
+        System.out.println("Interest Per Month: ");
+        System.out.println(interestPerMonth);
     }
 }
