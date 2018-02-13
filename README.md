@@ -33,3 +33,7 @@ Steps to run program
 	javac [filename].[extension]
 
 	java [filename]
+
+---
+
+Tip: When renaming the java file, the class name should match.
