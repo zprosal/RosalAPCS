@@ -72,14 +72,19 @@ class ValidationUtils {
     }
 
     public static Boolean isValidBoolean(Scanner scan4) {
-        try {
-            String b = scan4.nextLine(),tolowerCase;
-            return b.equals("t" || "f" || "true" ||"false"); 
+            String b = scan4.nextLine().toLowerCase();
+        if (b.equals("t") ||
+            b.equals("f") ||
+            b.equals("true") ||
+            b.equals("false"))
+            {
+            return true;
+            }
+        else {
+            return false;
+            }
+        
+        
         }
-        catch(Exception e) {
-            return false; 
-        }
-        return true; 
-    }
 
 }
