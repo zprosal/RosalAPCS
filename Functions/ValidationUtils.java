@@ -74,6 +74,7 @@ class ValidationUtils {
     public static Boolean isValidBoolean(Scanner scan4) {
         try {
             String b = scan4.nextLine(),tolowerCase;
+            return b.equals("t" || "f" || "true" ||"false"); 
         }
         catch(Exception e) {
             return false; 
