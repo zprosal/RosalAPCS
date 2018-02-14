@@ -72,7 +72,7 @@ class ValidationUtils {
     }
 
     public static Boolean isValidBoolean(Scanner scan4) {
-            String b = scan4.nextLine().toLowerCase();
+        String b = scan4.nextLine().toLowerCase();
         if (b.equals("t") ||
             b.equals("f") ||
             b.equals("true") ||
@@ -83,8 +83,17 @@ class ValidationUtils {
         else {
             return false;
             }
-        
-        
-        }
+
+        // try {
+        //     b.equals("t");
+        //     b.equals("f");
+        //     b.equals("true");
+        //     b.equals("false");
+        // }
+        // catch(Exception e) {
+        //     return false;
+        // }        
+        // return true;
+    }
 
 }
