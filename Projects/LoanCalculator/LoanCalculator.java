@@ -33,6 +33,7 @@ public class LoanCalculator{
     public static void flatInterest() {
         System.out.println("Still a stub function. Not yet implemented"); //Delete this once you implement the function
         //Calculate flat interest and print it out here
+        
     }
 
     public static void printModeStatement() {
