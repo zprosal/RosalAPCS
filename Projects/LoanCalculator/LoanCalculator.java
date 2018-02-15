@@ -72,7 +72,7 @@ public class LoanCalculator{
         System.out.println(
             "Original Loan Amount:\n" + loanAmt + "\n"
             + "Loan Term\n" + loanTerm + "\n"
-            + "Interest Rate\n" + interestRate
+            + "Interest Rate\n" + i nterestRate
         );
     }
 
