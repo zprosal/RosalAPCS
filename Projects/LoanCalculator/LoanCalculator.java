@@ -5,6 +5,8 @@ public class LoanCalculator{
     public static double loanAmt = -1;
     public static int loanTerm = -1;
     public static double interestRate = -1;
+    public static double interest = -1;
+    public static double total = -1;
 
     public static void main(String[] args) {
         //Read in the loan calculation mode
@@ -50,14 +52,18 @@ public class LoanCalculator{
             scan4 = new Scanner(System.in);
             System.out.println("Enter Interest Rate (%): "); 
             if(scan4.hasNextDouble()) { 
-                interestRate = scan4.nextDouble();
+                interestRate = scan4.nextDouble() * 0.01;
                 if(interestRate > 0) { 
                     break; 
                 }
             }
 
         }
-
+        System.out.println(
+            "Original Loan Amount: $" + loanAmt + "\n"
+            + "Loan Term: " + loanTerm + " years\n"
+            + "Interest Rate: " + interestRate * 100 + "%"
+        );
         if(mode == 1) {
             flatInterest();
         }
@@ -66,14 +72,13 @@ public class LoanCalculator{
         }
     }
 
-    public static void flatInterest() {
-        System.out.println("Still a stub function. Not yet implemented"); //Delete this once you implement the function
-        //Calculate flat interest and print it out here
+    public static void flatInterest() {       
+        interest = loanAmt * interestRate * loanTerm;
+        total = loanAmt + interest;
         System.out.println(
-            "Original Loan Amount:\n" + loanAmt + "\n"
-            + "Loan Term\n" + loanTerm + "\n"
-            + "Interest Rate\n" + i nterestRate
-        );
+            "Interest over term: $" + interest +"\n"
+            + "Total amount to be paid: $" + total
+        );        
     }
 
     public static void printModeStatement() {
