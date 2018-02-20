@@ -8,6 +8,7 @@ public class LoanCalculator{
     public static double interest = -1;
     public static double total = -1;
 
+
     public static void main(String[] args) {
         //Read in the loan calculation mode
         Scanner scan1;
@@ -68,7 +69,12 @@ public class LoanCalculator{
             flatInterest();
         }
         else {
-            System.out.println("Other modes not yet supported."); //Replace this with calls to your appropriate functions            
+            if(mode == 2) {
+                compoundingInterestNoPay();
+            }
+            else {
+                compoundingInterestWithPay();
+            }
         }
     }
 
@@ -77,6 +83,46 @@ public class LoanCalculator{
         total = loanAmt + interest;
         System.out.println(
             "Interest over term: $" + interest +"\n"
+            + "Total amount to be paid: $" + total
+        );        
+    }
+
+    public static void compoundingInterestNoPay() {       
+        total = loanAmt;
+        int loanTermMonths = loanTerm * 12;
+        while(loanTermMonths > 0) {
+            interest = total * interestRate / 12;
+            total = total + interest;
+            loanTermMonths = loanTermMonths - 1;
+            if(loanTermMonths == 0) {
+                break;
+            }
+        }
+        interest = total - loanAmt;        
+        System.out.println(
+            "Interest over term: $" + interest +"\n"
+            + "Total amount to be paid: $" + total
+        );        
+    }
+
+    public static void compoundingInterestWithPay() {       
+        total = loanAmt;
+        double ratePerMonth = interestRate / 12;
+        double monthlyPayment = 1 + loanAmt * (ratePerMonth / (1 - Math.pow((1 + ratePerMonth), (loanTerm * - 12))));
+        double finalPay = monthlyPayment;
+        while(total > 0) {
+            interest = total * ratePerMonth;
+            total = total + interest - monthlyPayment;
+            if(total == 0) {                
+                break;
+            }
+        }
+        
+        interest = total - loanAmt;        
+        System.out.println(
+            "Minimum Monthly Payment: $" + monthlyPayment +"\n"
+            + "Final Month Payment: $" + finalPay +"\n"
+            + "Interest over term: $" + interest +"\n"
             + "Total amount to be paid: $" + total
         );        
     }
@@ -90,3 +136,12 @@ public class LoanCalculator{
         );
     }
 }
+
+/*
+    Check:
+    $10000
+    10 years
+    3.5%
+    interest(2) = $4183
+    interest(3) = $1842
+*/
