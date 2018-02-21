@@ -106,22 +106,23 @@ public class LoanCalculator{
     }
 
     public static void compoundingInterestWithPay() {       
-        total = loanAmt;
+        double balance = loanAmt;
         double ratePerMonth = interestRate / 12;
         double monthlyPayment = 1 + loanAmt * (ratePerMonth / (1 - Math.pow((1 + ratePerMonth), (loanTerm * - 12))));
-        double finalPay = monthlyPayment;
-        while(total > 0) {
-            interest = total * ratePerMonth;
-            total = total + interest - monthlyPayment;
-            if(total == 0) {                
+        while(balance > 0) {
+            double monthInterest = balance * interestRate / 12;
+            interest = interest + monthInterest;
+            balance = balance + monthInterest - monthlyPayment;
+            if(balance == 0) {                
                 break;
             }
         }
-        
-        interest = total - loanAmt;        
+        double finalPay = monthlyPayment + balance;
+        total = loanAmt + interest;        
         System.out.println(
             "Minimum Monthly Payment: $" + monthlyPayment +"\n"
             + "Final Month Payment: $" + finalPay +"\n"
+            // + "End Balance: $" + balance +"\n"
             + "Interest over term: $" + interest +"\n"
             + "Total amount to be paid: $" + total
         );        

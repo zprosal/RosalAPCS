@@ -37,3 +37,5 @@ Steps to run program
 ---
 
 Tip: When renaming the java file, the class name should match.
+
+git reset --hard to restore to last commit
