@@ -57,11 +57,25 @@ class Loops1 {
         // while(shouldLoop) {
         //     if(n == 100) {
         //         System.out.println("100 loop passes occured.");
-        //         break; //fix, should not repeat
+        //         shouldLoop = false;
         //     }
         //     n++;
         // }    
 // 3.
-
+        // int n = 100;
+        // while(n >= -100) {
+        //     System.out.println(n);
+        //     n--;
+        // }
+        // int n = 0;
+        // while(n < 120) {
+        //     n += 3;
+        //     System.out.println(n);
+        // }  
+        // char alpha = 'a';
+        // while(alpha <= 'z') {
+        //     System.out.println(alpha);
+        //     alpha++;
+        }
     }
 }
