@@ -3,14 +3,14 @@
     * 1010
         * 10
     * 01010010 
-        * 128+32+2
-        * 162
+        * 64+16+2
+        * 82
     * 11101100 
         * 128+64+32+8+4
-        * 
+        * 236
     * 111111111111 (Twelve 1's)
-        * 2^13-1
-        * 8191
+        * 2^12-1
+        * 4095
 
 2. Write the Binary number corresponding to the following Decimal numbers:
     * 15 
