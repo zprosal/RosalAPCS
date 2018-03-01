@@ -36,7 +36,7 @@
     * BEEF
         * 11(4096)+14(256)+14(16)+15(1)
         * 41506+3584+224+15
-        * 44329
+        * 48879
 
 3. Write the Hexadecimal (Base-16) number corresponding to the following Decimal numbers:
     * 16
