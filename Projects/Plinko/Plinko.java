@@ -8,10 +8,11 @@ class Plinko {
     public static final int[] VALUES = {1, 3, 2, 0, 5, 0, 2, 3, 1};
 
     public static int mode = -1;
+    public static int slot = -1;
+    public static int count = -1;
 
     public static void main(String[] args) {
-        Scanner scan1;
-        Scanner scan2;
+        Scanner scan1;        
         while(true) {
             //Loop to select mode.
             //This loop is infinite until the user selects the "Quit" option (3)
@@ -20,10 +21,12 @@ class Plinko {
             if(scan1.hasNextInt()) {
                 mode = scan1.nextInt();
                 if(mode == SINGLE_DISC) {
-                    System.out.println("Mode not yet implemented");
+                    System.out.println("Mode not yet fully implemented");
+                    runOddRow(1);
                 }
                 else if(mode == MULTI_DISC) {
-                    System.out.println("Mode not yet implemented");
+                    System.out.println("Mode not yet fully implemented");
+                    runEvenRow(2);
                 }
                 else if(mode == TERMINATE) {
                     System.out.println("Goodbye");
@@ -36,9 +39,16 @@ class Plinko {
     }
     
     public static int runOddRow(int position) {
+        Scanner scan2;
         while(true) {
             scan2 = new Scanner(System.in);
-            System.out.println("");
+            System.out.print("Pick a slot to drop the disc (0-8): ");
+            if(scan2.hasNextInt()) { 
+                slot = scan2.nextInt();
+                if(-1 < slot && slot < 9) { 
+                    break; 
+                }
+            }
         }
         
         //Modify the position.
@@ -48,6 +58,28 @@ class Plinko {
     }
 
     public static int runEvenRow(int position) {
+        Scanner scan3;
+        while(true) {
+            scan3 = new Scanner(System.in);
+            System.out.print("Pick a slot to drop the disc(s) (0-8): ");
+            if(scan3.hasNextInt()) { 
+                slot = scan3.nextInt();
+                if(-1 < slot && slot < 9) { 
+                    break; 
+                }
+            }
+        }
+        Scanner scan4;
+        while(true) {
+            scan4 = new Scanner(System.in);
+            System.out.print("Enter number of discs to drop: ");
+            if(scan4.hasNextInt()) { 
+                count = scan4.nextInt();
+                if(count > 0) { 
+                    break; 
+                }
+            }
+        }
         //Modify the position.
         //Print the visualization of the row if it's single disc mode.
 
