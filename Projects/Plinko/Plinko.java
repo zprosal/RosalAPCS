@@ -20,13 +20,18 @@ class Plinko {
             printModeStatement();
             if(scan1.hasNextInt()) {
                 mode = scan1.nextInt();
-                if(mode == SINGLE_DISC) {
+                if(mode == SINGLE_DISC) {  
+                    collectSlotInput();   
+                    // for(int i = 1, i < 12, i++) {
+
+                    // }
                     System.out.println("Mode not yet fully implemented");
-                    runOddRow(1);
                 }
-                else if(mode == MULTI_DISC) {
+                else if(mode == MULTI_DISC) {                    
+                    collectSlotInput();
+                    collectDiscCount();
+                    
                     System.out.println("Mode not yet fully implemented");
-                    runEvenRow(2);
                 }
                 else if(mode == TERMINATE) {
                     System.out.println("Goodbye");
@@ -38,37 +43,21 @@ class Plinko {
         }
     }
     
-    public static int runOddRow(int position) {
+    public static void collectSlotInput() {
         Scanner scan2;
         while(true) {
             scan2 = new Scanner(System.in);
-            System.out.print("Pick a slot to drop the disc (0-8): ");
+            System.out.print("Pick a slot to drop the disc(s) (0-8): ");
             if(scan2.hasNextInt()) { 
                 slot = scan2.nextInt();
-                if(-1 < slot && slot < 9) { 
+                if(-1 < slot && slot < 9) {                    
                     break; 
                 }
             }
         }
-        
-        //Modify the position.
-        //Print the visualization of the row if it's single disc mode.
-
-        return position;
     }
 
-    public static int runEvenRow(int position) {
-        Scanner scan3;
-        while(true) {
-            scan3 = new Scanner(System.in);
-            System.out.print("Pick a slot to drop the disc(s) (0-8): ");
-            if(scan3.hasNextInt()) { 
-                slot = scan3.nextInt();
-                if(-1 < slot && slot < 9) { 
-                    break; 
-                }
-            }
-        }
+    public static void collectDiscCount() {
         Scanner scan4;
         while(true) {
             scan4 = new Scanner(System.in);
@@ -80,6 +69,17 @@ class Plinko {
                 }
             }
         }
+    }
+    public static int runOddRow(int position) {
+        
+        
+        //Modify the position.
+        //Print the visualization of the row if it's single disc mode.
+
+        return position;
+    }
+
+    public static int runEvenRow(int position) {               
         //Modify the position.
         //Print the visualization of the row if it's single disc mode.
 
