@@ -22,9 +22,29 @@ class Plinko {
                 mode = scan1.nextInt();
                 if(mode == SINGLE_DISC) {  
                     collectSlotInput();   
-                    // for(int i = 1, i < 12, i++) {
+                    int position = slot * 2;
+                    for(int i = 1; i < 12; i++) {
+                        if(position == 0) {
+                            position++;
+                        }
+                        if(position == 16) {
+                            position--;
+                        }
+                        if(0 < position && position < 16) {
+                            if(Math.random() > .5) {
+                                position++; //Shift Right
+                            } else {
+                                position--; //Shift Left
+                            }
+                        }
+                        if(isEven(position)) {
+                            printEvenRow(position);
+                        } else {
+                                printOddRow(position);
+                            }
+                        }
+                    }
 
-                    // }
                     System.out.println("Mode not yet fully implemented");
                 }
                 else if(mode == MULTI_DISC) {                    
@@ -41,7 +61,7 @@ class Plinko {
                 }
             }
         }
-    }
+    
     
     public static void collectSlotInput() {
         Scanner scan2;
@@ -70,20 +90,20 @@ class Plinko {
             }
         }
     }
-    public static int runOddRow(int position) {
+    public static void printOddRow(int position) {
+        System.out.println("Position: " + position);
         
         
-        //Modify the position.
         //Print the visualization of the row if it's single disc mode.
 
-        return position;
+        
     }
 
-    public static int runEvenRow(int position) {               
-        //Modify the position.
+    public static void printEvenRow(int position) {               
+        System.out.println("Position: " + position);
         //Print the visualization of the row if it's single disc mode.
 
-        return position;
+        
     }
 
     public static Boolean isEven(int x) {
