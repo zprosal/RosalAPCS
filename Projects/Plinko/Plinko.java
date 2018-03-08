@@ -23,7 +23,8 @@ class Plinko {
                 if(mode == SINGLE_DISC) {  
                     collectSlotInput();   
                     int position = slot * 2;
-                    for(int i = 1; i < 12; i++) {
+                    System.out.println("Position: " + position);
+                    for(int i = 0; i < 12; i++) {
                         if(position == 0) {
                             position++;
                         }
