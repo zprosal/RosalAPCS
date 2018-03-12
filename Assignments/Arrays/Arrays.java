@@ -22,5 +22,9 @@ class Arrays {
         int[] fibonacci = {1, 1, 2, 3, 0, 8, 13, 0, 34, 0};
         fibonacci[4] = fibonacci[2] + fibonacci[3];
         System.out.println(fibonacci[4]);
+        fibonacci[7] = fibonacci[5] + fibonacci[6];
+        System.out.println(fibonacci[7]);
+        fibonacci[9] = fibonacci[7] + fibonacci[8];
+        System.out.println(fibonacci[9]);                
     }
 }
