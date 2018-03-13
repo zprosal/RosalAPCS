@@ -23,8 +23,9 @@ class Plinko {
                 mode = scan1.nextInt();
                 if(mode == SINGLE_DISC) {  
                     collectSlotInput();   
-                    position = slot * 2;                   
-                    for(int i = 0; i < 13; i++) {
+                    position = slot * 2;
+                    printEvenRow(position);    
+                    for(int i = 1; i < 13; i++) {
                         if(position == 0) {
                             position++;
                         }
