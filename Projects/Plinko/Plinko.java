@@ -11,6 +11,17 @@ class Plinko {
     public static int slot = -1;
     public static int count = -1;
     public static int position = -1;
+    public static int finalPosition = -1;
+
+    public static final String ANSI_RESET = "\u001B[0m";
+    public static final String ANSI_BLACK = "\u001B[30m";
+    public static final String ANSI_RED = "\u001B[31m";
+    public static final String ANSI_GREEN = "\u001B[32m";
+    public static final String ANSI_YELLOW = "\u001B[33m";
+    public static final String ANSI_BLUE = "\u001B[34m";
+    public static final String ANSI_PURPLE = "\u001B[35m";
+    public static final String ANSI_CYAN = "\u001B[36m";
+    public static final String ANSI_WHITE = "\u001B[37m";
 
     public static void main(String[] args) {
         Scanner scan1;        
@@ -43,9 +54,9 @@ class Plinko {
                             printEvenRow(position);
                         } else {
                             printOddRow(position);
-                            }
                         }
-                    int finalPosition = position / 2;
+                    }
+                    finalPosition = position / 2;
                     System.out.println(
                         "\nYour disk landed in position " + finalPosition + 
                         " and you won " + VALUES[finalPosition] + " points.");
@@ -54,7 +65,45 @@ class Plinko {
                 else if(mode == MULTI_DISC) {                    
                     collectSlotInput();
                     collectDiscCount();
-                    System.out.println("Mode not yet fully implemented");
+                    // position = slot * 2;
+                    int[] results = new int[9];
+                    for(int n = 0; n < count; n++) {
+                        position = slot * 2;
+                        for(int i = 1; i < 13; i++) {
+                            if(position == 0) {
+                                position++;
+                            }
+                            if(position == 16) {
+                                position--;
+                            }
+                            if(0 < position && position < 16) {
+                                if(Math.random() > .5) {
+                                    position++; //Shift Right
+                                } else {
+                                    position--; //Shift Left
+                                }
+                            }                            
+                        }
+                        results[position/2]++;    
+                                  
+                    }         
+                    int total = 0;
+                    for(int t = 0; t < 9; t++) {
+                        total += results[t] * VALUES[t];
+                    }
+                    
+                    System.out.println(
+                        "\nDiscs in position 0: " + results[0] + "\n" +
+                        "Discs in position 1: " + results[1] + "\n" +
+                        "Discs in position 2: " + results[2] + "\n" +
+                        "Discs in position 3: " + results[3] + "\n" +
+                        "Discs in position 4: " + results[4] + "\n" +
+                        "Discs in position 5: " + results[5] + "\n" +
+                        "Discs in position 6: " + results[6] + "\n" +
+                        "Discs in position 7: " + results[7] + "\n" +
+                        "Discs in position 8: " + results[8] + "\n" +
+                        "You won " + ANSI_GREEN + total + ANSI_RESET + " points!\n"
+                        );  
                 }
                 else if(mode == TERMINATE) {
                     System.out.println("Goodbye");
@@ -74,7 +123,8 @@ class Plinko {
             System.out.print("Pick a slot to drop the disc(s) (0-8): ");
             if(scan2.hasNextInt()) { 
                 slot = scan2.nextInt();
-                if(-1 < slot && slot < 9) {                    
+                if(-1 < slot && slot < 9) {       
+                    // position = slot * 2;             
                     break; 
                 }
             }
@@ -99,10 +149,10 @@ class Plinko {
         //Print the visualization of the row if it's single disc mode.
         for(int i = 0; i <= 16; i++) {
             if(position == i) {
-                System.out.print("O");
+                System.out.print(ANSI_CYAN + "O" + ANSI_RESET);
             }
             else if(isEven(i)) {
-                System.out.print(".");
+                System.out.print(ANSI_RED + "." + ANSI_RESET);
             }
             else {
                 System.out.print(" ");
@@ -115,13 +165,13 @@ class Plinko {
         //Print the visualization of the row if it's single disc mode.
         for(int i = 0; i <= 16; i++) {
             if(position == i) {
-                System.out.print("O");
+                System.out.print(ANSI_CYAN + "O" + ANSI_RESET);
             }
             else if(isEven(i)) {
                 System.out.print(" ");
             }
             else {
-                System.out.print(".");
+                System.out.print(ANSI_RED + "." + ANSI_RESET);
             }
         }
         System.out.print("\n");
