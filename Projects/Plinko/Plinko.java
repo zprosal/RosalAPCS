@@ -40,16 +40,14 @@ class Plinko {
                         if(position == 0) {
                             position++;
                         }
-                        if(position == 16) {
+                        else if(position == 16) {
                             position--;
                         }
-                        if(0 < position && position < 16) {
-                            if(Math.random() > .5) {
+                        else if(Math.random() > .5) {
                                 position++; //Shift Right
                             } else {
                                 position--; //Shift Left
                             }
-                        }
                         if(isEven(i)) {
                             printEvenRow(position);
                         } else {
@@ -65,7 +63,6 @@ class Plinko {
                 else if(mode == MULTI_DISC) {                    
                     collectSlotInput();
                     collectDiscCount();
-                    // position = slot * 2;
                     int[] results = new int[9];
                     for(int n = 0; n < count; n++) {
                         position = slot * 2;
@@ -123,8 +120,7 @@ class Plinko {
             System.out.print("Pick a slot to drop the disc(s) (0-8): ");
             if(scan2.hasNextInt()) { 
                 slot = scan2.nextInt();
-                if(-1 < slot && slot < 9) {       
-                    // position = slot * 2;             
+                if(-1 < slot && slot < 9) {                   
                     break; 
                 }
             }
