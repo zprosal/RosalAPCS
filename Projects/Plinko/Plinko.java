@@ -10,6 +10,7 @@ class Plinko {
     public static int mode = -1;
     public static int slot = -1;
     public static int count = -1;
+    public static int position = -1;
 
     public static void main(String[] args) {
         Scanner scan1;        
@@ -22,9 +23,8 @@ class Plinko {
                 mode = scan1.nextInt();
                 if(mode == SINGLE_DISC) {  
                     collectSlotInput();   
-                    int position = slot * 2;
-                    System.out.println("Position: " + position);
-                    for(int i = 0; i < 12; i++) {
+                    position = slot * 2;                   
+                    for(int i = 0; i < 13; i++) {
                         if(position == 0) {
                             position++;
                         }
@@ -38,20 +38,21 @@ class Plinko {
                                 position--; //Shift Left
                             }
                         }
-                        if(isEven(position)) {
+                        if(isEven(i)) {
                             printEvenRow(position);
                         } else {
-                                printOddRow(position);
+                            printOddRow(position);
                             }
                         }
-                    }
-
-                    System.out.println("Mode not yet fully implemented");
+                    int finalPosition = position / 2;
+                    System.out.println(
+                        "\nYour disk landed in position " + finalPosition + 
+                        " and you won " + VALUES[finalPosition] + " points.");
                 }
+
                 else if(mode == MULTI_DISC) {                    
                     collectSlotInput();
                     collectDiscCount();
-                    
                     System.out.println("Mode not yet fully implemented");
                 }
                 else if(mode == TERMINATE) {
@@ -62,6 +63,7 @@ class Plinko {
                 }
             }
         }
+    }
     
     
     public static void collectSlotInput() {
@@ -91,20 +93,37 @@ class Plinko {
             }
         }
     }
-    public static void printOddRow(int position) {
-        System.out.println("Position: " + position);
-        
-        
-        //Print the visualization of the row if it's single disc mode.
 
-        
+    public static void printOddRow(int position) {      
+        //Print the visualization of the row if it's single disc mode.
+        for(int i = 0; i <= 16; i++) {
+            if(position == i) {
+                System.out.print("O");
+            }
+            else if(isEven(i)) {
+                System.out.print(".");
+            }
+            else {
+                System.out.print(" ");
+            }
+        }
+        System.out.print("\n");        
     }
 
     public static void printEvenRow(int position) {               
-        System.out.println("Position: " + position);
         //Print the visualization of the row if it's single disc mode.
-
-        
+        for(int i = 0; i <= 16; i++) {
+            if(position == i) {
+                System.out.print("O");
+            }
+            else if(isEven(i)) {
+                System.out.print(" ");
+            }
+            else {
+                System.out.print(".");
+            }
+        }
+        System.out.print("\n");
     }
 
     public static Boolean isEven(int x) {
