@@ -211,7 +211,7 @@ class PlinkoExtra {
                     }
                 }
                 else if(board == QUANTUM) {
-                    System.out.println(BLUE + "\nSelected board: Quantum"+ RESET);
+                    System.out.println(BLUE_BRIGHT + "\nSelected board: Quantum"+ RESET);
                     Scanner scan1;        
                     while(true) {
                         scan1 = new Scanner(System.in);
@@ -337,7 +337,7 @@ class PlinkoExtra {
         //Print the visualization of the row if it's single disc mode.
         for(int i = 0; i <= 16; i++) {
             if(position == i) {
-                System.out.print(BLUE + "O" + RESET);
+                System.out.print(BLUE_BRIGHT + "O" + RESET);
             }
             else if(isEven(i)) {
                 System.out.print(YELLOW + "." + RESET);
@@ -353,7 +353,7 @@ class PlinkoExtra {
         //Print the visualization of the row if it's single disc mode.
         for(int i = 0; i <= 16; i++) {
             if(position == i) {
-                System.out.print(BLUE + "O" + RESET);
+                System.out.print(BLUE_BRIGHT + "O" + RESET);
             }
             else if(isEven(i)) {
                 System.out.print(" ");
@@ -383,7 +383,7 @@ class PlinkoExtra {
             CYAN + "\nSelect a board:\n" + RESET
             + "\t(1) " + PURPLE + "Standard\n" + RESET
             + "\t(2) " + YELLOW + "No Walls\n" + RESET
-            + "\t(3) " + BLUE + "Quantum\n" + RESET
+            + "\t(3) " + BLUE_BRIGHT + "Quantum\n" + RESET
             + "\t(4) " + RED + "Quit\n" + RESET
         );
     }    
