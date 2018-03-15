@@ -53,29 +53,45 @@ class Lists {
             System.out.println(CYAN + "To-Do List:" + RESET);
             scan1 = new Scanner(System.in);
             for(int i = 0; i < ToDoList.size(); i++) {
-                System.out.println(ToDoList.get(i));
+                System.out.println("[" + i + "] " + ToDoList.get(i));
             }
             System.out.print(
-                CYAN_BRIGHT + "Select an action:\n" + RESET
+                CYAN_BRIGHT + "\nSelect an action:\n" + RESET
                 + "\t(1) " + PURPLE + "Add item\n" + RESET
                 + "\t(2) " + YELLOW + "Remove item\n" + RESET
                 + "\t(3) " + RED + "Quit\n" + RESET
                 );
             if(scan1.hasNextInt()) {
-                action = scan1.nextInt;
+                action = scan1.nextInt();
                 if(action == ADD) {
                     Scanner scan2;
-                    System.out.print(PURPLE_BRIGHT + "\nAdd an item: " + RESET);
-                    newItem = scan2.nextLine();
-                    ToDoList.add(newItem);
-                    break;
+                    while(true) {
+                        scan2 = new Scanner(System.in);
+                        System.out.print(PURPLE_BRIGHT + "\nAdd an item: " + RESET);
+                        newItem = scan2.nextLine();
+                        ToDoList.add(newItem);
+                        break;
+                    }
                 }
                 else if(action == REMOVE) {
                     Scanner scan3;
-                    System.out.print(YELLOW_BRIGHT + "\nChoose which item to remove: " + RESET);  
-                    if(scan3.hasNextInt()) {
-                        removePosition = scan3.nextInt;
-                    }           
+                    while(true) {
+                        scan3 = new Scanner(System.in);
+                        System.out.print(YELLOW_BRIGHT + "\nChoose which item to remove: " + RESET);  
+                        if(scan3.hasNextInt()) {
+                            removePosition = scan3.nextInt();
+                            if(-1 < removePosition && removePosition < ToDoList.size()) {
+                                ToDoList.remove(removePosition);
+                                break;
+                            }
+                        }
+                    }
+                }
+                else if(action == QUIT) {
+                    System.out.println(RED + "Goodbye" + RESET);
+                    break;
+                } else {
+                    continue;
                 }
             }
         }
