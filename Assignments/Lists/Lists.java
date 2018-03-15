@@ -48,9 +48,6 @@ class Lists {
     // 2.
         ArrayList<String> ToDoList = new ArrayList<String>();
 
-        ToDoList.add("Finish Plinko");
-        ToDoList.add("Finish Lists Assignment");
-        ToDoList.add("Tell Mr. Merrel he's awesome");
         Scanner scan1;
         while(true) {
             System.out.println(CYAN + "To-Do List:" + RESET);
