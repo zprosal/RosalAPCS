@@ -8,6 +8,23 @@ public class LoanCalculator{
     public static double interest = -1;
     public static double total = -1;
 
+    public static final String RESET = "\u001B[0m";
+    public static final String BLACK = "\u001B[30m";
+    public static final String RED = "\u001B[31m";
+    public static final String GREEN = "\u001B[32m";
+    public static final String YELLOW = "\u001B[33m";
+    public static final String BLUE = "\u001B[34m";
+    public static final String PURPLE = "\u001B[35m";
+    public static final String CYAN = "\u001B[36m";
+    public static final String WHITE = "\u001B[37m";
+    public static final String BLACK_BRIGHT = "\033[0;90m";
+    public static final String RED_BRIGHT = "\033[0;91m";
+    public static final String GREEN_BRIGHT = "\033[0;92m";  
+    public static final String YELLOW_BRIGHT = "\033[0;93m"; 
+    public static final String BLUE_BRIGHT = "\033[0;94m";   
+    public static final String PURPLE_BRIGHT = "\033[0;95m"; 
+    public static final String CYAN_BRIGHT = "\033[0;96m";   
+    public static final String WHITE_BRIGHT = "\033[0;97m";
 
     public static void main(String[] args) {
         //Read in the loan calculation mode
@@ -24,11 +41,18 @@ public class LoanCalculator{
             //If it reaches here, the input was invalid. Loop again.
         }
         
-        System.out.println("You selected mode " + mode);
+        if(mode == 1) {
+            System.out.println("You selected mode " + PURPLE + mode + RESET +"\n");
+        }
+        else if(mode == 2) {
+            System.out.println("You selected mode " + CYAN + mode + RESET +"\n");
+        } else {
+            System.out.println("You selected mode " + BLUE_BRIGHT + mode + RESET +"\n");
+        }
         Scanner scan2;
         while(true) { 
             scan2 = new Scanner(System.in);
-            System.out.println("Enter Loan Amount: ");             
+            System.out.print(GREEN + "Enter Loan Amount: " + RESET);       
             if(scan2.hasNextDouble()) { 
                 loanAmt = scan2.nextDouble();
                 if(loanAmt > 0) { 
@@ -39,7 +63,7 @@ public class LoanCalculator{
         Scanner scan3;
         while(true) { 
             scan3 = new Scanner(System.in);
-            System.out.println("Enter Loan Term (in years): "); 
+            System.out.print(YELLOW_BRIGHT + "Enter Loan Term (in years): " + RESET); 
             if(scan3.hasNextInt()) { 
                 loanTerm = scan3.nextInt();
                 if(loanTerm > 0) { 
@@ -51,7 +75,7 @@ public class LoanCalculator{
         Scanner scan4;   
         while(true) { 
             scan4 = new Scanner(System.in);
-            System.out.println("Enter Interest Rate (%): "); 
+            System.out.print(RED_BRIGHT + "Enter Interest Rate (%): " + RESET); 
             if(scan4.hasNextDouble()) { 
                 interestRate = scan4.nextDouble() * 0.01;
                 if(interestRate > 0) { 
@@ -61,9 +85,9 @@ public class LoanCalculator{
 
         }
         System.out.println(
-            "Original Loan Amount: $" + loanAmt + "\n"
-            + "Loan Term: " + loanTerm + " years\n"
-            + "Interest Rate: " + interestRate * 100 + "%"
+            GREEN + "\nOriginal Loan Amount: " + RESET + "$" + loanAmt + "\n"
+            + YELLOW_BRIGHT + "Loan Term: " + RESET + loanTerm + " years\n"
+            + RED_BRIGHT + "Interest Rate: " + RESET + interestRate * 100 + "%"
         );
         if(mode == 1) {
             flatInterest();
@@ -82,8 +106,8 @@ public class LoanCalculator{
         interest = loanAmt * interestRate * loanTerm;
         total = loanAmt + interest;
         System.out.println(
-            "Interest over term: $" + interest +"\n"
-            + "Total amount to be paid: $" + total
+            PURPLE + "Interest over term: " + RESET + "$" + interest +"\n"
+            + PURPLE + "Total amount to be paid: " + RESET + "$"  + total
         );        
     }
 
@@ -100,8 +124,8 @@ public class LoanCalculator{
         }
         interest = total - loanAmt;        
         System.out.println(
-            "Interest over term: $" + interest +"\n"
-            + "Total amount to be paid: $" + total
+            CYAN + "Interest over term: " + RESET + "$" + interest +"\n"
+            + CYAN + "Total amount to be paid: " + RESET + "$"  + total
         );        
     }
 
@@ -120,20 +144,20 @@ public class LoanCalculator{
         double finalPay = monthlyPayment + balance;
         total = loanAmt + interest;        
         System.out.println(
-            "Minimum Monthly Payment: $" + monthlyPayment +"\n"
-            + "Final Month Payment: $" + finalPay +"\n"
+            BLUE_BRIGHT + "Minimum Monthly Payment: " + RESET + "$" + monthlyPayment +"\n"
+            + BLUE_BRIGHT + "Final Month Payment: " + RESET + "$" + finalPay +"\n"
             // + "End Balance: $" + balance +"\n"
-            + "Interest over term: $" + interest +"\n"
-            + "Total amount to be paid: $" + total
+            + BLUE_BRIGHT + "Interest over term: " + RESET + "$" + interest +"\n"
+            + BLUE_BRIGHT + "Total amount to be paid: " + RESET + "$"  + total
         );        
     }
 
     public static void printModeStatement() {
         System.out.print(
-            "Select an interest calculation mode:\n" // "\n" is new line
-            + "(1) Flat Interest\n"
-            + "(2) Compounding Interest Without Monthly Payments\n"
-            + "(3) Compounding Interest With Monthly Payments\n"
+            YELLOW_BRIGHT + "\nSelect an interest calculation mode:\n" + RESET // "\n" is new line
+            + "(1) " + PURPLE + "Flat Interest\n" + RESET
+            + "(2) " + CYAN + "Compounding Interest Without Monthly Payments\n" + RESET
+            + "(3) " + BLUE_BRIGHT + "Compounding Interest With Monthly Payments\n" + RESET
         );
     }
 }
