@@ -1,4 +1,4 @@
-class TwoDArrays {
+class ExerciseOne {
     public static void main(String[] args) {
     // 1.
         //Example - Contents of a 3x3 array of zeros
@@ -51,8 +51,12 @@ class TwoDArrays {
         }
 
         int[][] arr5 = new int[5][5]
+        int num3 = -1;
         for(int i = 0; i < arr5.length; i++) {
-            for(int j = 0; j < arr5[i].length)
+            for(int j = 0; j < arr5[i].length) {
+                arr5[i][j] = num3;
+                num3--;
+            }
         } 
     }
 }
