@@ -26,6 +26,6 @@ class ExerciseTwo {
             }
             System.out.println(mat[i]);
         }
-        // return reverse;
+        return reverse;
     }
 }
