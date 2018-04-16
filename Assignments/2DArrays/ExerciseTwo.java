@@ -3,7 +3,7 @@ class ExerciseTwo {
         int[][] mat = new int[3][3];
         for(int i = 0; i < mat.length; i++) {
             for(int j = 0; j < mat[i].length; j++) {
-                mat[i][j] = [i * 0] + [j * 3];
+                mat[i][j] = (i * 0) + (j * 3);
             }
         }
         reverseMatrix(mat);
