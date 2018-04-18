@@ -5,8 +5,7 @@ class practice {
         int num1 = 2;
         for(int i = 0; i < mat1.length; i++) {
             for(int j = 0; j < mat1[i].length; j++) {
-                mat1[i][j] = num1;
-                num1 *= j + 2;
+                mat1[i][j] = (int)Math.pow(i + 2, j + 1);
             }
         }
         printMatrix(mat1);
