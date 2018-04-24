@@ -6,6 +6,7 @@ public class Student {
     public String firstName;
     public String lastName;
     public int id;
+    public ArrayList<Course> courses; 
 
     public Student(String firstName, String lastName, int id) {
         this.firstName = firstName;
@@ -19,5 +20,17 @@ public class Student {
 
     public String toString() {
         return "Name: " + firstName + " " + lastName + "; ID: " + id;
+    }
+
+    public void addCourse(Course c) {
+        courses = new ArrayList<Course>();
+        courses.add(c);
+    }
+
+    public void listCourses() {
+        System.out.println("Courses: ");
+        for(int i = 0; i < courses.size(); i++) {
+            System.out.println("\t" + courses.get(i));
+        }
     }
 }
