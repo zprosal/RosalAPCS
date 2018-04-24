@@ -12,6 +12,7 @@ public class Student {
         this.firstName = firstName;
         this.lastName = lastName;
         this.id = id;
+        this.courses = new ArrayList<Course>();
     }
 
     public String getFullName() {
@@ -23,7 +24,6 @@ public class Student {
     }
 
     public void addCourse(Course c) {
-        courses = new ArrayList<Course>();
         courses.add(c);
     }
 

@@ -10,7 +10,9 @@ class Example {
         // System.out.println(s.toString());
         Course c = new Course("Computer Science", "CS101", "Mr. Merrell", "L39B");
         // System.out.println(c.toString());
-        s.addCourse("AP Calc");
-        // s.listCourses();
+        s.addCourse(c);
+        s.addCourse(c);
+        s.addCourse(new Course ("Calculus", "CLCAB", "Mr. Jacotin", "E3"));
+        s.listCourses();
     }
 }
