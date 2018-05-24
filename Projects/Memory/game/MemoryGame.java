@@ -39,15 +39,22 @@ public class MemoryGame {
         }   
         shuffleBoard();
     }        
+
+    public void run() {
+
+    }
+    
     private void shuffleBoard() {
 
     }
+
     public void render() {
         for(int i = 0; i < board.size(); i++) {
+            System.out.print(i);
             for(int j = 0; j < board[].size(); j++) {
-                System.out.print(i + " | " + board[i][j].render());
+                System.out.print(" | " + board[i][j].render());
             }
-            System.out.println("");
+            System.out.print(" |/n" );
         }
     }
 }
